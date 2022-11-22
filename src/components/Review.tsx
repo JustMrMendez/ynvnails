@@ -2,7 +2,7 @@ function Review() {
   return (
     <>
       <div>
-        <h1 className="text-2xl">review</h1>
+        <h1 className="text-2xl">test</h1>
       </div>
     </>
   );
