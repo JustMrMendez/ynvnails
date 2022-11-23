@@ -14,7 +14,7 @@ function Card({
 }: CardProps) {
   return (
     <>
-      <Link to={`/?productId=${productId}`}>
+      <Link to={`/product/${productId}`}>
         <div className="flex min-h-[420px] w-80 flex-col justify-between rounded-3xl bg-pink-100 p-4">
           <img src={href} alt="" className="mb-2 rounded-xl" />
           <h3 className="mb-2 text-2xl font-semibold">{title}</h3>
