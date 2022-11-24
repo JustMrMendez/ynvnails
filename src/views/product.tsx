@@ -2,10 +2,6 @@
 
 import { Link, useParams } from "react-router-dom";
 
-interface ProductParams {
-  productId: number;
-}
-
 function Product() {
   const { productId } = useParams();
   console.log(productId);
@@ -21,7 +17,7 @@ function Product() {
       <div className="flex h-screen w-screen items-center justify-center">
         <div className="flex h-full flex-col justify-between rounded-2xl bg-purple-100/50 p-10 text-center md:h-fit">
           <h1 className="text-2xl font-bold text-red-400">
-            A product with id {productId} does not exist
+            A product withdshddhhgshs id {productId} does not exist
           </h1>
 
           <svg
