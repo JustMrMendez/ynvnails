@@ -1,0 +1,23 @@
+.review {
+  font-size: 18px;
+  color: #585c65;
+  margin: 25px 30px 35px 30px;
+}
+
+.name {
+  font-size: 22px;
+  height: 40px;
+  color: #cf28bf;
+  margin: 30px;
+}
+
+.card {
+  width: 356px;
+  height: fit-content;
+  color: #ffffff;
+  padding: 8px, 8px, 8px, 8px;
+}
+
+.quatation {
+  margin: -21px 20px 38px 20px;
+}
