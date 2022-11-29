@@ -7,9 +7,9 @@ function Services() {
   const href = "https://picsum.photos/id/55/240/240";
 
   return (
-    <div>
+    <div className="h-full">
       <Service />
-      <Service title={title} flip />
+      <Service title={title} description={description} flip />
     </div>
   );
 }
