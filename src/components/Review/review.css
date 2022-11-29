@@ -2,6 +2,7 @@
   font-size: 18px;
   color: #585c65;
   margin: 25px 30px 35px 30px;
+  padding-top: 2rem;
 }
 
 .name {
@@ -16,8 +17,12 @@
   height: fit-content;
   color: #ffffff;
   padding: 8px, 8px, 8px, 8px;
+  position: relative;
 }
 
 .quatation {
-  margin: -21px 20px 38px 20px;
+  position: absolute;
+  top: -1.5rem;
+  left: 0.3rem;
+  margin-bottom: -10px;
 }

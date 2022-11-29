@@ -3,21 +3,21 @@ interface ReviewsProps {
   text: string;
   name: string;
 }
-
-const text =
-  "Lorem Ipsum is simply dummy text of the printing and typesetting industry.";
-console.log(text);
-
 const name = "Richard";
 console.log(name);
 
-function Reviews() {
+function Reviews({
+  text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+  name = "Richard",
+}: ReviewsProps) {
   return (
-    <div className="flex flex-col gap-14">
-      <Review text={text} name={name} />
-      <Review text={text} name={name} />
-      <Review text={text} name={name} />
-    </div>
+    <>
+      <div className="flex flex-col gap-14 md:flex-row">
+        <Review text={text} name={name} />
+        <Review text={text} name={name} />
+        <Review text={text} name={name} />
+      </div>
+    </>
   );
 }
 
