@@ -2,7 +2,7 @@ import Card from "./Card";
 
 function Cards() {
   return (
-    <div className="flex flex-row">
+    <div className="flex flex-col gap-5 md:flex-row">
       <Card
         href="https://picsum.photos/id/1/316/240"
         title="New Year, New Styles"
