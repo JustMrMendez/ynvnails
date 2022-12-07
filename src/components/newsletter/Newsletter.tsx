@@ -4,26 +4,24 @@ import Button from "../Button/Button";
 
 function Footer() {
   return (
-    <div className="w-[90%]">
-      <div className="flex-col justify-center rounded-3xl bg-teal-400 py-3 text-center text-black shadow-lg">
-        <h1 className="text-2xl font-bold">
+    <div className="mx-auto my-10 w-full md:w-2/3">
+      <div className=" w-full flex-col justify-around rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 text-center text-black shadow-lg md:rounded-3xl md:py-20">
+        <h1 className="text-4xl font-extrabold">
           Subscribe to Our Newsletter for Upcoming Deals
         </h1>
-        <div className="m-2">
+        <div className="m-6 flex flex-row justify-center gap-4">
           <input
             placeholder="Email Address"
             type="text"
-            className="rounded-3xl text-center text-black"
+            className="rounded-3xl bg-white bg-opacity-20 text-center text-white"
+          />
+          <Button
+            label="Subscribe"
+            color="pink-300 transition-all hover:scale-110 hover:bg-pink-100 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-100"
+            labelColor="black"
           />
         </div>
-        <Button
-          label={"Subscribe"}
-          color={
-            "pink-300 transition-all hover:scale-110 hover:bg-pink-100 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-100"
-          }
-          labelColor={"black"}
-        />
-        <div className="flex justify-center gap-4 py-2">
+        <div className="flex justify-center gap-4 py-3">
           <Icon
             href="https://Instagram.com"
             viewbox="0 0 448 512"
@@ -43,22 +41,51 @@ function Footer() {
           <h3 className="font-bold text-black">YNV Nails</h3>
         </div>
       </div>
-      <div className="flex flex-row justify-center gap-10 align-middle">
-        <div className="m-3 flex-col">
-          <LinkList title="Location" />
-          <LinkList name="Miami" />
-          <LinkList name="Kendall" />
-          <LinkList name="Brickell" />
+      <div className="flex flex-row justify-center gap-3">
+        <div className="m-3 flex-col justify-center">
+          <h2 className="font-bold">Location</h2>
+          <LinkList
+            linkList={[
+              {
+                title: "Miami",
+                href: "/cotact",
+              },
+              {
+                title: "Brickell",
+                href: "/services",
+              },
+            ]}
+          />
         </div>
-        <div className="m-3 flex-col">
-          <LinkList title="Contact" />
-          <LinkList name="About Us" />
-          <LinkList name="FAQ" />
+        <div className="m-3 flex-col justify-center">
+          <h2 className="font-bold">Contact</h2>
+          <LinkList
+            linkList={[
+              {
+                title: "About Us",
+                href: "/aboutus",
+              },
+              {
+                title: "FAQ",
+                href: "/faq",
+              },
+            ]}
+          />
         </div>
-        <div className="m-3 flex-col">
-          <LinkList title="Services" />
-          <LinkList name="Pedicure" />
-          <LinkList name="Manicure" />
+        <div className="m-3 flex-col justify-center">
+          <h2 className="font-bold">Services</h2>
+          <LinkList
+            linkList={[
+              {
+                title: "Manicures",
+                href: "/manicures",
+              },
+              {
+                title: "Pedicures",
+                href: "/pedicures",
+              },
+            ]}
+          />
         </div>
       </div>
       <div className=" my-20 text-center text-gray-700">

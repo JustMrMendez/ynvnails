@@ -1,20 +1,28 @@
-interface LinkProps {
-  title?: string;
-  href?: string;
-  name?: string;
+import { Link } from "react-router-dom";
+
+interface link {
+  title: string;
+  href: string;
 }
 
-function LinkList({ title, href, name }: LinkProps) {
+interface linkListProps {
+  linkList: link[];
+}
+
+function Links({ linkList }: linkListProps) {
   return (
-    <div className="justify-around text-center hover:scale-110">
-      <h3 className="text-xl text-black ">{title}</h3>
-      <a href={href}>
-        <span className="text-md text-gray-600 hover:text-pink-600">
-          {name}
-        </span>
-      </a>
-    </div>
+    <>
+      {linkList.map((link) => (
+        <div className="justify-around text-center hover:scale-110">
+          <Link to={link.href}>
+            <span className="text-sm text-gray-600 hover:text-pink-600">
+              {link.title}
+            </span>
+          </Link>
+        </div>
+      ))}
+    </>
   );
 }
 
-export default LinkList;
+export default Links;
