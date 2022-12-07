@@ -8,12 +8,12 @@ function Hero() {
           Welcome to YVN Nails!
         </h1>
         <p className="py-2 text-lg text-white">
-          Check our our inventory of Nail products and colors we provide by
+          Check out our inventory of Nail products and Services we provide by
           clicking below.
         </p>
         <div className="align-middle">
           <Button
-            label={"Check Products"}
+            label={"Services & Products"}
             color={
               "pink-300 transition-all hover:scale-110 hover:bg-pink-100 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-100 sm:w-[50%]"
             }
