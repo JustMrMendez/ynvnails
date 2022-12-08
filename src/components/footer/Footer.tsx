@@ -1,10 +1,10 @@
 import Icon from "./Icon";
-import LinkList from "../footer/LinkList";
+import LinkList from "./LinkList";
 import Button from "../Button/Button";
 
 function Footer() {
   return (
-    <div className="mx-auto flex h-3/4 w-11/12 flex-col justify-around md:w-2/3">
+    <div className="mx-auto flex h-[75vh] w-11/12 flex-col justify-around md:w-2/3">
       <div className="flex h-1/2 w-full flex-col justify-around rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 px-2 text-center text-black shadow-lg md:rounded-3xl">
         <h1 className="text-2xl font-extrabold md:text-4xl">
           Subscribe to Our Newsletter for Upcoming Deals
@@ -13,7 +13,7 @@ function Footer() {
           <input
             placeholder="Email Address"
             type="text"
-            className="rounded-3xl bg-white bg-opacity-30 py-3 text-center text-white/80 placeholder:text-white/50 md:px-20"
+            className="rounded-3xl bg-white bg-opacity-30 py-3 text-center text-white/80 placeholder:text-white/50 focus:outline-0 md:px-20"
           />
           <Button
             label="Subscribe"

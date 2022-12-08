@@ -16,10 +16,10 @@ function Navbar() {
   ];
 
   return (
-    <div className="flex items-center justify-between bg-teal-500 p-6">
+    <div className="shadow-purple-900-200/40 fixed z-50 flex w-full items-center justify-between bg-gradient-to-tr from-purple-500 to-pink-600 py-2 px-6 shadow-sm">
       <div className="flex items-center">
         <div className="text-2xl font-bold text-white">Logo</div>
-        <div className="ml-6 flex">
+        <div className="ml-6 hidden  md:flex">
           {linksList.map((link) => (
             <Link
               key={link.name}

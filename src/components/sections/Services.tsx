@@ -4,10 +4,10 @@ function Services() {
   const title = "Service #5";
   const description =
     "we provide Basic Manicure for cheap customers and the best Manicures with gold glitters.";
-  const href = "https://picsum.photos/id/55/240/240";
+  // const href = "https://picsum.photos/id/55/240/240";
 
   return (
-    <div className="h-full">
+    <div className="flex h-[80vh] flex-col justify-center">
       <Service />
       <Service title={title} description={description} flip />
     </div>

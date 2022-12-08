@@ -2,7 +2,7 @@ import Button from "../Button/Button";
 
 function Hero() {
   return (
-    <div className="md: flex h-full w-full bg-gradient-to-br from-purple-500 to-pink-600 px-12 shadow-lg">
+    <div className="flex h-[70vh] w-full items-center bg-gradient-to-br from-purple-500 to-pink-600 px-12 shadow-2xl">
       <div className="flex flex-col gap-3 py-10 text-center md:w-1/2">
         <h1 className="text-5xl font-extrabold text-white">
           Welcome to YVN Nails!
