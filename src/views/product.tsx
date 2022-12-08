@@ -2,7 +2,7 @@
 
 import { Link, useParams } from "react-router-dom";
 import Carousel from "../components/Carousel";
-import Review from "../components/Review";
+import Review from "../components/Review/Review";
 import NotFound from "../components/svgs/NotFound";
 
 function Product() {
@@ -60,7 +60,7 @@ function Product() {
         </div>
       </section>
       <section className="mx-auto flex items-center md:w-2/3">
-        <Review />
+        <Review text={""} name={""} />
         {/* <div className="w-1/3 px-4 py-4">
           <h3 className="text-xl font-bold">Customer Review 1</h3>
           <p>Review details go here</p>

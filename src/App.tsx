@@ -1,7 +1,11 @@
-import Components from "./views/components";
+import Hero from "./components/sections/Hero";
 
 function App() {
-  return <Components />;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 }
 
 export default App;
