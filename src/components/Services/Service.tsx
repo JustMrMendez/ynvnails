@@ -25,7 +25,7 @@ function Service({
         />
         <div className="absolute z-0 h-full w-full rotate-45 rounded-2xl border-none bg-pink-300"></div>
       </div>
-      <div className="w-full px-6  md:h-1/2 md:w-1/2">
+      <div className="h-full w-full px-16 md:h-2/3 md:w-1/2">
         <h1 className="text-5xl font-semibold"> {title}</h1>
         <p className="mt-4 text-lg text-gray-600">{description}</p>
       </div>

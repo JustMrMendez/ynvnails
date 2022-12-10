@@ -2,7 +2,7 @@ import Card from "./Card";
 
 function Cards() {
   return (
-    <div className="flex h-[75vh] max-w-5xl flex-col gap-5 md:flex-row">
+    <div className="flex max-h-full max-w-5xl flex-col gap-5 md:flex-row">
       <div className="md:w-1/2">
         <Card
           href="https://picsum.photos/id/1/316/240"

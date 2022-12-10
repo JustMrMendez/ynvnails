@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 
 function Footer() {
   return (
-    <div className="mx-auto flex h-[75vh] w-11/12 flex-col justify-around md:w-2/3">
+    <div className="mx-auto flex h-[90vh] w-11/12 flex-col justify-around py-5 md:w-2/3">
       <div className="flex h-1/2 w-full flex-col justify-around rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 px-2 text-center text-black shadow-lg md:rounded-3xl">
         <h1 className="text-2xl font-extrabold md:text-4xl">
           Subscribe to Our Newsletter for Upcoming Deals
@@ -88,7 +88,7 @@ function Footer() {
           />
         </div>
       </div>
-      <div className="text-center text-gray-700">
+      <div className="h-1/4 text-center text-gray-700">
         © 2022 YNV Nails™ All Rights Reserved.
       </div>
     </div>
