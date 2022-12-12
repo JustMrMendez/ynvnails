@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div className="mx-auto flex h-[90vh] w-11/12 flex-col justify-around py-5 md:w-2/3">
       <div className="flex h-1/2 w-full flex-col justify-around rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 px-2 text-center text-black shadow-lg md:rounded-3xl">
-        <h1 className="text-2xl font-extrabold md:text-4xl">
+        <h1 className="text-2xl font-extrabold text-white md:text-4xl">
           Subscribe to Our Newsletter for Upcoming Deals
         </h1>
         <div className=" flex flex-col justify-center gap-4 md:flex-row">
