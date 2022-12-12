@@ -22,7 +22,7 @@ function Card({
           flip
             ? " w-4/5 flex-col md:w-full md:flex-row"
             : "  w-4/5 flex-col md:w-80"
-        } rounded-3xl bg-pink-100 p-4`}
+        } rounded-3xl p-4 hover:scale-110 hover:bg-pink-100 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-300`}
       >
         <img
           src={href}
@@ -32,7 +32,11 @@ function Card({
         <div className="flex h-full flex-col justify-around gap-5 md:gap-0 md:px-10">
           <h3 className="text-2xl font-semibold">{title}</h3>
           <p className="text-gray-800">{description}</p>
-          <Button label="View Product" labelColor="black" color="pink-300" />
+          <Button
+            label="View Product"
+            labelColor="black"
+            color="pink-300 hover:bg-white"
+          />
         </div>
       </div>
     </>
