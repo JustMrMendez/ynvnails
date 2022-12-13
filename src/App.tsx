@@ -6,13 +6,15 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <div className="max-w-7xll flex h-full w-full flex-col items-center gap-5">
+    <>
       <Navbar />
-      <Hero />
-      <Services />
-      <Products />
+      <main className="max-w-7xll z-10 flex h-full w-full flex-col items-center gap-5 rounded-b-2xl bg-white pb-10 shadow-lg md:rounded-none">
+        <Hero />
+        <Services />
+        <Products />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 }
 

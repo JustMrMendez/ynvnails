@@ -60,7 +60,7 @@ function Product() {
         </div>
       </section>
       <section className="mx-auto flex items-center md:w-2/3">
-        <Review text={""} name={""} />
+        <Review text={"Mr. Rick"} name={"this is an amazing product page"} />
         {/* <div className="w-1/3 px-4 py-4">
           <h3 className="text-xl font-bold">Customer Review 1</h3>
           <p>Review details go here</p>
