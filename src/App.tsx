@@ -6,7 +6,7 @@ import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <div className="w-ful max-w-7xll flex flex-col items-center gap-5">
+    <div className="max-w-7xll flex h-full w-full flex-col items-center gap-5">
       <Navbar />
       <Hero />
       <Services />

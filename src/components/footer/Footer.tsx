@@ -4,9 +4,9 @@ import Button from "../Button/Button";
 
 function Footer() {
   return (
-    <div className="mx-auto flex h-[75vh] w-11/12 flex-col justify-around md:w-2/3">
+    <div className="mx-auto flex h-[90vh] w-11/12 flex-col justify-around py-5 md:w-2/3">
       <div className="flex h-1/2 w-full flex-col justify-around rounded-2xl bg-gradient-to-br from-purple-500 to-pink-600 px-2 text-center text-black shadow-lg md:rounded-3xl">
-        <h1 className="text-2xl font-extrabold md:text-4xl">
+        <h1 className="text-2xl font-extrabold text-white md:text-4xl">
           Subscribe to Our Newsletter for Upcoming Deals
         </h1>
         <div className=" flex flex-col justify-center gap-4 md:flex-row">
@@ -38,7 +38,7 @@ function Footer() {
               d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
             />
           </div>
-          <h3 className="text-center font-bold text-black">YNV Nails</h3>
+          <h2 className="text-center text-xl font-bold text-white">YNV Nails</h2>
         </div>
       </div>
       <div className="flex flex-row justify-center gap-3">
@@ -88,7 +88,7 @@ function Footer() {
           />
         </div>
       </div>
-      <div className="text-center text-gray-700">
+      <div className="h-1/4 text-center text-gray-700">
         © 2022 YNV Nails™ All Rights Reserved.
       </div>
     </div>
