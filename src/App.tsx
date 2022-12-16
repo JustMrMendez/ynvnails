@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="max-w-7xll z-10 flex h-full w-full flex-col items-center gap-5 rounded-b-2xl bg-white pb-10 shadow-lg md:rounded-none">
+      <main className="max-w-7xll relative z-40 flex h-full w-full flex-col items-center gap-5 rounded-b-2xl bg-white pb-24 shadow-lg md:rounded-none">
         <Hero />
         <Services />
         <Products />
