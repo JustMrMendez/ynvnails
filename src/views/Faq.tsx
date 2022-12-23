@@ -1,12 +1,12 @@
-import FaqList from "../faqQA/FaqList";
+import FaqList from "../components/faqQA/FaqList";
 
 function Faq() {
   return (
-    <div className="rounded-lg border bg-pink-100 p-4">
-      <div className="flex justify-center">
-        <h2 className="mb-6 font-mono text-2xl font-extrabold">
-          Frequently Asked Questions
-        </h2>
+    <div className="relative z-40 min-h-screen rounded-lg bg-pink-50">
+      <div className="grid h-[30vh] w-full place-items-center rounded-b-lg bg-gradient-to-br from-purple-500 to-pink-600 shadow-lg">
+        <h1 className="text-center text-4xl font-black text-white">
+          Frequency Asked Questions
+        </h1>
       </div>
       <div className="mb-6">
         <FaqList

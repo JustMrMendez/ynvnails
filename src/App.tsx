@@ -7,13 +7,11 @@ import Footer from "./components/footer/Footer";
 function App() {
   return (
     <>
-      <Navbar />
       <main className="max-w-7xll relative z-40 flex h-full w-full flex-col items-center gap-5 rounded-b-2xl bg-white pb-24 shadow-lg md:rounded-none">
         <Hero />
         <Services />
         <Products />
       </main>
-      <Footer />
     </>
   );
 }
