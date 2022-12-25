@@ -7,7 +7,7 @@ function Services() {
   // const href = "https://picsum.photos/id/55/240/240";
 
   return (
-    <div className="flex h-[80vh] flex-col justify-center">
+    <div className="mt-10 flex h-[80vh] flex-col justify-center">
       <Service />
       <Service title={title} description={description} flip />
     </div>

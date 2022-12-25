@@ -6,6 +6,8 @@ import Product from "./views/product";
 import Faq from "./views/Faq";
 import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/footer/Footer";
+import { useState } from "react";
+import Sidebar from "./components/navigation/Sidebar";
 
 ReactDOM.render(
   <Router>
