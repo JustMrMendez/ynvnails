@@ -345,15 +345,18 @@ export default function Calendar() {
                     </div>
                 </div>
                 <div className="flex bg-gray-200 text-xs leading-6 text-gray-700 lg:flex-auto">
-                    <div className="hidden w-full lg:grid lg:grid-cols-7 lg:grid-rows-6 lg:gap-px">
+                    <div className="group hidden w-full lg:grid lg:grid-cols-7 lg:grid-rows-6 lg:gap-px">
                         {days.map(day => (
-                            <div
+                            <button
                                 key={day.date}
                                 className={classNames(
-                                    day.isCurrentMonth
-                                        ? "bg-white"
-                                        : "bg-gray-50 text-gray-500",
-                                    "relative py-2 px-3"
+                                    day.open
+                                        ? "m-[2px] bg-white transition hover:z-50 hover:scale-110 hover:!bg-pink-300  group-hover:z-0 group-hover:bg-pink-100"
+                                        : "pointer-events-none m-1 bg-gray-100 text-gray-500",
+                                    day.isToday
+                                        ? "ring-1 ring-inset ring-indigo-500"
+                                        : "",
+                                    "relative z-50 rounded-md border-pink-100 py-2 px-3 text-left "
                                 )}
                             >
                                 <time
@@ -395,7 +398,7 @@ export default function Calendar() {
                                         )}
                                     </ol>
                                 )}
-                            </div>
+                            </button>
                         ))}
                     </div>
                     <div className="isolate grid w-full grid-cols-7 grid-rows-6 gap-px lg:hidden">
