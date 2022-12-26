@@ -20,7 +20,6 @@ export default function Calendar() {
 
     useEffect(() => {
         setDays(generateCalendar(currentMonth, currentYear));
-        console.log(days);
     }, [currentMonth, currentYear]);
 
     function handlePreviousClick() {
@@ -43,10 +42,15 @@ export default function Calendar() {
         }
     }
 
+    // get todays weekday by name
+    const weekday = new Date().toLocaleDateString("en-US", {
+        weekday: "short",
+    });
+
     const selectedDay = days.find(day => day.isSelected);
     return (
         <div className="lg:flex lg:h-full lg:flex-col">
-            <header className="flex items-center justify-between border-b border-gray-200 py-4 px-6 lg:flex-none">
+            <header className="flex items-center justify-between py-4 px-6 lg:flex-none">
                 <h1 className="text-lg font-semibold text-gray-900">
                     <time dateTime="2022-01">
                         {new Intl.DateTimeFormat("en-US", {
@@ -320,54 +324,140 @@ export default function Calendar() {
                     </Menu>
                 </div>
             </header>
-            <div className="shadow ring-1 ring-black ring-opacity-5 lg:flex lg:flex-auto lg:flex-col">
-                <div className="grid grid-cols-7 gap-px border-b border-gray-300 bg-gray-200 text-center text-xs font-semibold leading-6 text-gray-700 lg:flex-none">
-                    <div className="bg-white py-2">
-                        M<span className="sr-only sm:not-sr-only">on</span>
+            <div className="space-y-3 lg:flex lg:flex-auto lg:flex-col">
+                <div className="grid grid-cols-7 gap-px rounded-md  bg-pink-500 text-center text-xs font-black leading-6 text-white/80 shadow-md lg:flex-none">
+                    <div
+                        className={classNames(
+                            weekday === "Mon"
+                                ? "rounded-md text-base text-white ring-2  ring-inset ring-purple-600"
+                                : "",
+                            "py-2"
+                        )}
+                    >
+                        M
+                        <span className="sr-only sm:not-sr-only">
+                            {weekday === "Mon" ? "onday" : "on"}
+                        </span>
                     </div>
-                    <div className="bg-white py-2">
-                        T<span className="sr-only sm:not-sr-only">ue</span>
+                    <div
+                        className={classNames(
+                            weekday === "Tue"
+                                ? "rounded-md text-base text-white ring-2 ring-inset  ring-purple-600"
+                                : "",
+                            "py-2"
+                        )}
+                    >
+                        T
+                        <span className="sr-only sm:not-sr-only">
+                            {weekday === "Tue" ? "uesday" : "ue"}
+                        </span>
                     </div>
-                    <div className="bg-white py-2">
-                        W<span className="sr-only sm:not-sr-only">ed</span>
+                    <div
+                        className={classNames(
+                            weekday === "Wed"
+                                ? "rounded-md text-base text-white ring-2  ring-inset ring-purple-600"
+                                : "",
+                            "py-2"
+                        )}
+                    >
+                        W
+                        <span className="sr-only sm:not-sr-only">
+                            {weekday === "Wed" ? "ednesday" : "ed"}
+                        </span>
                     </div>
-                    <div className="bg-white py-2">
-                        T<span className="sr-only sm:not-sr-only">hu</span>
+                    <div
+                        className={classNames(
+                            weekday === "Thu"
+                                ? "rounded-md text-base text-white ring-2  ring-inset ring-purple-600"
+                                : "",
+                            "py-2"
+                        )}
+                    >
+                        T
+                        <span className="sr-only sm:not-sr-only">
+                            {weekday === "Thu" ? "hursday" : "hu"}
+                        </span>
                     </div>
-                    <div className="bg-white py-2">
-                        F<span className="sr-only sm:not-sr-only">ri</span>
+                    <div
+                        className={classNames(
+                            weekday === "Fri"
+                                ? "rounded-md text-base text-white ring-2  ring-inset ring-purple-600"
+                                : "",
+                            "py-2"
+                        )}
+                    >
+                        F
+                        <span className="sr-only sm:not-sr-only">
+                            {weekday === "Fri" ? "riday" : "ri"}
+                        </span>
                     </div>
-                    <div className="bg-white py-2">
-                        S<span className="sr-only sm:not-sr-only">at</span>
+                    <div
+                        className={classNames(
+                            weekday === "Sat"
+                                ? "rounded-md text-base text-white ring-2 ring-inset  ring-purple-600"
+                                : "",
+                            "py-2"
+                        )}
+                    >
+                        S
+                        <span className="sr-only sm:not-sr-only">
+                            {weekday === "Sat" ? "aturday" : "at"}
+                        </span>
                     </div>
-                    <div className="bg-white py-2">
-                        S<span className="sr-only sm:not-sr-only">un</span>
+                    <div
+                        className={classNames(
+                            weekday === "Sun"
+                                ? "rounded-md text-base text-white ring-2  ring-inset ring-purple-600"
+                                : "",
+                            "py-2"
+                        )}
+                    >
+                        S
+                        <span className="sr-only sm:not-sr-only">
+                            {weekday === "Sun" ? "unday" : "un"}
+                        </span>
                     </div>
                 </div>
-                <div className="flex bg-gray-200 text-xs leading-6 text-gray-700 lg:flex-auto">
+                <div className="flex bg-transparent text-xs leading-6 text-gray-700 lg:flex-auto">
                     <div className="group hidden w-full lg:grid lg:grid-cols-7 lg:grid-rows-6 lg:gap-px">
                         {days.map(day => (
                             <button
                                 key={day.date}
                                 className={classNames(
                                     day.open
-                                        ? "m-[2px] bg-white transition hover:z-50 hover:scale-110 hover:!bg-pink-300  group-hover:z-0 group-hover:bg-pink-100"
-                                        : "pointer-events-none m-1 bg-gray-100 text-gray-500",
+                                        ? "m-[2px]  bg-pink-500/80 font-black text-white/80 transition hover:!z-50 hover:scale-110  hover:!bg-pink-500 hover:!opacity-100 group-hover:z-0 group-hover:opacity-80"
+                                        : "pointer-events-none m-1  bg-pink-200 text-black/20",
                                     day.isToday
-                                        ? "ring-1 ring-inset ring-indigo-500"
+                                        ? "ring-2 ring-inset ring-purple-600"
                                         : "",
-                                    "relative z-50 rounded-md border-pink-100 py-2 px-3 text-left "
+                                    "relative h-[5rem] rounded-md border-pink-100 py-2 px-3 text-left "
                                 )}
                             >
+                                {!day.open ? (
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={0.5}
+                                        stroke="currentColor"
+                                        className="absolute top-0 h-full w-full text-pink-400/40"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M6 6l12 12M6 18L18 6"
+                                        />
+                                    </svg>
+                                ) : undefined}
                                 <time
                                     dateTime={day.date}
                                     className={
                                         day.isToday
-                                            ? "flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600 font-semibold text-white"
+                                            ? "flex h-6 w-6 items-center justify-center rounded-full bg-purple-600 font-black text-white"
                                             : undefined
                                     }
                                 >
-                                    {new Date(day.date).getDate() + 1}
+                                    {day.date.slice(-2)}
                                 </time>
                                 {day.events.length > 0 && (
                                     <ol className="mt-2">
@@ -375,9 +465,16 @@ export default function Calendar() {
                                             <li key={event.id}>
                                                 <a
                                                     href={event.href}
-                                                    className="group flex"
+                                                    className="flex"
                                                 >
-                                                    <p className="flex-auto truncate font-medium text-gray-900 group-hover:text-indigo-600">
+                                                    <p
+                                                        className={classNames(
+                                                            day.open
+                                                                ? "text-white/80"
+                                                                : "text-gray-500",
+                                                            "flex-auto"
+                                                        )}
+                                                    >
                                                         {event.name}
                                                     </p>
                                                     <time
@@ -441,7 +538,7 @@ export default function Calendar() {
                                         "ml-auto"
                                     )}
                                 >
-                                    {new Date(day.date).getDate() + 1}
+                                    {day.date.slice(-2)}
                                 </time>
                                 <span className="sr-only">
                                     {day.events.length} events
