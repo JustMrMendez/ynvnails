@@ -13,7 +13,7 @@ function Service({
 }: ServiceProps) {
   return (
     <div
-      className={`flex h-4/5 w-full flex-col items-center justify-around gap-6 md:h-2/5 ${
+      className={`my-10 flex h-4/5 w-full flex-col items-center justify-around gap-6 md:h-2/5 ${
         flip ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >

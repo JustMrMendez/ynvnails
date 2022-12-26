@@ -6,18 +6,20 @@ import Product from "./views/product";
 import Faq from "./views/Faq";
 import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/footer/Footer";
-import { useState } from "react";
-import Sidebar from "./components/navigation/Sidebar";
+import Booking from "./views/bookin";
 
 ReactDOM.render(
-  <Router>
-    <Navbar />
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/product/:productId" element={<Product />} />
-      <Route path="/faq" element={<Faq />} />
-    </Routes>
-    <Footer />
-  </Router>,
-  document.getElementById("root")
+    <Router>
+        <div className="min-w-screen grid place-items-center">
+            <Navbar />
+        </div>
+        <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/product/:productId" element={<Product />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/booking" element={<Booking />} />
+        </Routes>
+        <Footer />
+    </Router>,
+    document.getElementById("root")
 );
