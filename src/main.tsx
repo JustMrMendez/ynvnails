@@ -7,10 +7,11 @@ import Faq from "./views/Faq";
 import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/footer/Footer";
 import Booking from "./views/bookin";
-import { UserAuthContextProvider } from "./context/UserAuthContext";
+import { AuthProvider } from "./context/AuthProvider";
+import AuthPage from "./views/auth";
 
 ReactDOM.render(
-    <UserAuthContextProvider>
+    <AuthProvider>
         <Router>
             <div className="min-w-screen grid place-items-center">
                 <Navbar />
@@ -20,9 +21,10 @@ ReactDOM.render(
                 <Route path="/product/:productId" element={<Product />} />
                 <Route path="/faq" element={<Faq />} />
                 <Route path="/booking" element={<Booking />} />
+                <Route path="/auth" element={<AuthPage />} />
             </Routes>
             <Footer />
         </Router>
-    </UserAuthContextProvider>,
+    </AuthProvider>,
     document.getElementById("root")
 );
