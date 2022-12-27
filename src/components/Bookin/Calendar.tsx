@@ -8,6 +8,7 @@ import {
 } from "@heroicons/react/20/solid";
 import { Menu, Transition } from "@headlessui/react";
 import { generateCalendar, type Day, type Event } from "./utils";
+import HourSelector from "./HourSelector";
 
 function classNames(...classes: (string | boolean | undefined)[]) {
     return classes.filter(Boolean).join(" ");
@@ -16,6 +17,8 @@ function classNames(...classes: (string | boolean | undefined)[]) {
 export default function Calendar() {
     const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
     const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+    const [bookerDate, setBookerDate] = useState<Day>();
+    const [isBookerVisible, setIsBookerVisible] = useState(false);
     const [days, setDays] = useState<Day[]>([]);
 
     useEffect(() => {
@@ -46,10 +49,16 @@ export default function Calendar() {
     const weekday = new Date().toLocaleDateString("en-US", {
         weekday: "short",
     });
+    let selectedDay = days.find(day => day.isSelected);
 
-    const selectedDay = days.find(day => day.isSelected);
     return (
         <div className="lg:flex lg:h-full lg:flex-col">
+            {isBookerVisible && (
+                <HourSelector
+                    day={bookerDate as Day}
+                    onClose={() => setIsBookerVisible(false)}
+                />
+            )}
             <header className="flex items-center justify-between py-4 px-6 lg:flex-none">
                 <h1 className="text-lg font-semibold text-gray-900">
                     <time dateTime="2022-01">
@@ -422,10 +431,14 @@ export default function Calendar() {
                     <div className="group hidden w-full lg:grid lg:grid-cols-7 lg:grid-rows-6 lg:gap-px">
                         {days.map(day => (
                             <button
+                                onClick={() => {
+                                    setIsBookerVisible(true);
+                                    setBookerDate(day);
+                                }}
                                 key={day.date}
                                 className={classNames(
                                     day.open
-                                        ? "m-[2px]  bg-pink-500/80 font-black text-white/80 transition hover:!z-50 hover:scale-110  hover:!bg-pink-500 hover:!opacity-100 group-hover:z-0 group-hover:opacity-80"
+                                        ? "m-[2px]  bg-pink-500/80 font-black text-white/80 transition hover:!z-40 hover:!scale-110 hover:!bg-pink-500  hover:!opacity-100 group-hover:z-0 group-hover:scale-95 group-hover:opacity-80"
                                         : "pointer-events-none m-1  bg-pink-200 text-black/20",
                                     day.isToday
                                         ? "ring-2 ring-inset ring-purple-600"
@@ -459,14 +472,11 @@ export default function Calendar() {
                                 >
                                     {day.date.slice(-2)}
                                 </time>
-                                {day.events.length > 0 && (
+                                {day.events.length > 0 && day.open && (
                                     <ol className="mt-2">
                                         {day.events.slice(0, 2).map(event => (
                                             <li key={event.id}>
-                                                <a
-                                                    href={event.href}
-                                                    className="flex"
-                                                >
+                                                <div className="flex">
                                                     <p
                                                         className={classNames(
                                                             day.open
@@ -481,11 +491,16 @@ export default function Calendar() {
                                                         dateTime={
                                                             event.datetime
                                                         }
-                                                        className="ml-3 hidden flex-none text-gray-500 group-hover:text-indigo-600 xl:block"
+                                                        className={classNames(
+                                                            day.open
+                                                                ? "text-white/60"
+                                                                : "text-gray-600/60",
+                                                            "ml-3 hidden flex-none  xl:block"
+                                                        )}
                                                     >
                                                         {event.time}
                                                     </time>
-                                                </a>
+                                                </div>
                                             </li>
                                         ))}
                                         {day.events.length > 2 && (
@@ -501,6 +516,10 @@ export default function Calendar() {
                     <div className="isolate grid w-full grid-cols-7 grid-rows-6 gap-px lg:hidden">
                         {days.map(day => (
                             <button
+                                onClick={() => {
+                                    setIsBookerVisible(true);
+                                    setBookerDate(day);
+                                }}
                                 key={day.date}
                                 type="button"
                                 className={classNames(

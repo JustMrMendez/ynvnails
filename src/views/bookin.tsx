@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Calendar from "../components/Calendar";
+import Calendar from "../components/Bookin/Calendar";
 
 const Booking = () => {
     return (
