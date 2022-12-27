@@ -5,7 +5,7 @@ import Services from "./components/sections/Services";
 function App() {
     return (
         <>
-            <main className="max-w-7xll relative z-30 flex h-full w-full flex-col items-center gap-10 rounded-b-2xl bg-pink-50 pb-24 shadow-lg md:rounded-none">
+            <main className="max-w-7xll relative z-30 flex h-full w-full flex-col items-center gap-10 rounded-b-2xl bg-pink-50 pt-20 pb-24 shadow-lg md:rounded-none md:pt-24">
                 <Hero />
                 <Services />
                 <Products />
