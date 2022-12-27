@@ -3,7 +3,7 @@ import Service from "../Services/Service";
 function Services() {
     const ServiceList = [
         {
-            title: "Acrilic Manicure",
+            title: "Acrylic Manicure",
             description: {
                 long: "Enhance your natural nails with a custom acrylic manicure! Choose from a wide range of colors and finishes to create the perfect look for you. Acrylics add strength and length to your nails and are perfect for creating bold and unique designs. Book your appointment today and get ready to turn heads with your stunning acrylic nails!",
                 short: "Enhance your natural nails with a custom acrylic manicure! Choose from a wide range of colors and finishes to create the perfect look for you.",
