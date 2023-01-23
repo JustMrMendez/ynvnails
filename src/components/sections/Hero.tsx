@@ -5,7 +5,7 @@ function Hero() {
         <div className="flex h-[50vh] max-w-screen-2xl items-center rounded-b-md bg-gradient-to-br from-purple-500 to-pink-600 px-5 shadow-md md:h-[70vh] md:w-full md:rounded-2xl md:shadow-2xl">
             <div className="flex flex-col gap-3 py-10 text-center md:w-1/2">
                 <h1 className="text-5xl font-extrabold text-white">
-                    Welcome to YVN Nails!
+                    Welcome to YNV Nails!
                 </h1>
                 <p className="py-2 text-lg text-white">
                     Check out our inventory of Nail products and Services we
