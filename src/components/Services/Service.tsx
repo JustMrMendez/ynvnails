@@ -24,7 +24,7 @@ function Service({
                 <img
                     src={href}
                     alt=""
-                    className="sticky z-10 h-full w-full rounded-xl shadow-md drop-shadow-xl"
+                    className="sticky z-10 h-60 w-60 rounded-xl shadow-md drop-shadow-xl md:h-72 md:w-72"
                 />
                 <div className="absolute inset-0 z-0 m-auto h-full w-full rotate-45 rounded-2xl border-none bg-pink-300"></div>
             </div>

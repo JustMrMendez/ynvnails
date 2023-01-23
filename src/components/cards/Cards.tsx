@@ -5,23 +5,26 @@ function Cards() {
         <div className="flex max-h-full max-w-5xl flex-col gap-5 md:flex-row">
             <div className="md:w-1/2">
                 <Card
-                    href="https://picsum.photos/id/1/316/240"
-                    title="New Year, New Styles"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    href="https://www.sallybeauty.com/dw/image/v2/BCSM_PRD/on/demandware.static/-/Sites-SBS-SallyBeautySupply/default/dwb9fd96d5/images/large/SBS-156990.jpg?sw=1500&sh=1500&sfrm=png"
+                    // Courtesy Image from Sallybeauty.com
+                    title="Professional Manicure & Pedicure Kit"
+                    description="Everything you'll Need to Practice & kit to be part of Our team of Nail technician is right in this kit."
                 />
             </div>
             <div className="flex flex-col gap-5 md:h-1/2">
                 <Card
                     flip
-                    href="https://picsum.photos/id/888/316/240"
-                    title="Qatar 2022 Booked"
-                    description="catch a flight to the 4geeks headquarters and learn about new programming languages."
+                    href="https://cdn.shopify.com/s/files/1/0413/6229/2900/products/786CosmeticsNailPolishColorGuide2.jpg?v=1664831397"
+                    // Courtesy Image from 786Cosmetics.com
+                    title="786 Cosmetics Nail polish"
+                    description="786 Cosmetics Nail polish mix Set now at a discounted price, In Stores only."
                 />
                 <Card
                     flip
-                    href="https://picsum.photos/id/28/316/240"
-                    title="Discover the wonders of react"
-                    description="tailwinds & react working together. Lorem ipsum dolor sit amet, consectetur adip"
+                    href="https://www.sallybeauty.com/dw/image/v2/BCSM_PRD/on/demandware.static/-/Sites-SBS-SallyBeautySupply/default/dwea61a9f9/images/large/SBS-169608.jpg?sw=1500&sh=1500&sfrm=png"
+                    // Courtesy Image from Sallybeauty.com
+                    title="Starter Manicure & Pedicure Kit"
+                    description="This Awesome Manicure & Pedicure Kit is a great gift, The perfect travel kit"
                 />
             </div>
         </div>
