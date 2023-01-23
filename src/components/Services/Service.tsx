@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface ServiceProps {
     title?: string;
     description: { short: string; long: string };
@@ -36,6 +38,14 @@ function Service({
                 <p className="mt-2 text-xl text-gray-600 md:mt-4 md:hidden md:text-lg">
                     {description.short}
                 </p>
+                <div className="mt-3">
+                    <Link
+                        to="/"
+                        className="rounded bg-pink-500 px-2 py-1 text-lg text-pink-50  transition-all duration-300 hover:bg-pink-200 hover:text-pink-900"
+                    >
+                        Book Now!
+                    </Link>
+                </div>
             </div>
         </div>
     );
