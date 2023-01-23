@@ -9,6 +9,7 @@ import Footer from "./components/footer/Footer";
 import Booking from "./views/bookin";
 import { AuthProvider } from "./context/AuthProvider";
 import AuthPage from "./views/auth";
+import ProductPage from "./views/ProductPage";
 
 ReactDOM.render(
     <AuthProvider>
@@ -22,6 +23,7 @@ ReactDOM.render(
                 <Route path="/faq" element={<Faq />} />
                 <Route path="/booking" element={<Booking />} />
                 <Route path="/auth" element={<AuthPage />} />
+                <Route path="/Products" element={<ProductPage />} />
             </Routes>
             <Footer />
         </Router>
