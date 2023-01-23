@@ -30,7 +30,7 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
                     </li>
                     <li className="py-2">
                         <a
-                            href="/products"
+                            href="/Products"
                             className="block px-4 py-2 text-gray-400 hover:bg-gray-800 hover:text-white"
                         >
                             Products

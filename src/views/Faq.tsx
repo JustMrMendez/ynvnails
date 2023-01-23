@@ -62,7 +62,7 @@ function Faq() {
           Frequency Asked Questions
         </h1>
       </div>
-      <div className="mb-6 grid w-full place-items-center">
+      <div className="mb-6 grid w-full place-items-center p-2">
         <FaqList faqList={faqList} />
       </div>
     </div>

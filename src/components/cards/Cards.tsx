@@ -14,7 +14,7 @@ function Cards() {
             <div className="flex flex-col gap-5 md:h-1/2">
                 <Card
                     flip
-                    href="https://cdn.shopify.com/s/files/1/0413/6229/2900/products/786CosmeticsNailPolishColorGuide2.jpg?v=1664831397"
+                    href="https://x9x6y4p2.stackpathcdn.com/wp-content/uploads/2018/03/786-Nail-Polish-The-Upcoming-Featured-1.jpg"
                     // Courtesy Image from 786Cosmetics.com
                     title="786 Cosmetics Nail polish"
                     description="786 Cosmetics Nail polish mix Set now at a discounted price, In Stores only."

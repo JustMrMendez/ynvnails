@@ -27,7 +27,7 @@ function Card({
                 <img
                     src={href}
                     alt=""
-                    className={`rounded-xl ${
+                    className={`rounded-xl object-cover ${
                         flip ? "md:aspect-square md:h-60" : ""
                     }`}
                 />
