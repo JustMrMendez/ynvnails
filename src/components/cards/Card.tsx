@@ -34,11 +34,13 @@ function Card({
                 <div className="flex h-full flex-col justify-around gap-5 md:gap-0 md:px-4">
                     <h3 className="text-2xl font-semibold">{title}</h3>
                     <p className="text-gray-800">{description}</p>
-                    <Button
-                        label="View Product"
-                        labelColor="black"
-                        color="pink-300 transition duration-200 group-hover:bg-pink-400 hover:!bg-white"
-                    />
+                    <Link to="/Products">
+                        <Button
+                            label="View Product"
+                            labelColor="black"
+                            color="pink-300 transition duration-200 group-hover:bg-pink-400 hover:!bg-white"
+                        />
+                    </Link>
                 </div>
             </div>
         </>
