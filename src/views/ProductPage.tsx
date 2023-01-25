@@ -1,8 +1,25 @@
+import { useEffect, useState } from "react";
 import Card from "../components/cards/Card";
-import ScrollTop from "../components/svgs/topScroll";
+import { doc, getDocs, collection, DocumentData } from "firebase/firestore";
+import { db } from "../db";
 
 function ProductPage() {
-    ScrollTop();
+    const [products, setProducts] = useState([] as DocumentData[]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const colRef = collection(db, "product");
+            const docSnap = await getDocs(colRef);
+            const data = docSnap.docs.map(doc => doc.data());
+
+            setProducts(data);
+            console.log(products);
+        };
+
+        fetchData();
+    }, []);
+
+    // ScrollTop();
 
     return (
         <div className="relative z-40 min-h-screen  rounded-b-2xl bg-pink-50 pb-20 shadow-lg md:shadow-2xl">
@@ -12,6 +29,14 @@ function ProductPage() {
                 </h1>
             </div>
             <div className="mt-8 mb-4 flex flex-wrap gap-6">
+                {products.map((product, index) => (
+                    <Card
+                        key={index}
+                        href={product.image}
+                        title={product.name}
+                        description={product.subtitle}
+                    />
+                ))}
                 <Card
                     href="https://www.sallybeauty.com/dw/image/v2/BCSM_PRD/on/demandware.static/-/Sites-SBS-SallyBeautySupply/default/dwb9fd96d5/images/large/SBS-156990.jpg?sw=1500&sh=1500&sfrm=png"
                     // Courtesy Image from Sallybeauty.com
