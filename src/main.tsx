@@ -10,6 +10,8 @@ import Booking from "./views/bookin";
 import { AuthProvider } from "./context/AuthProvider";
 import AuthPage from "./views/auth";
 import ProductPage from "./views/ProductPage";
+import ManicurePage from "./views/ManicurePage";
+import PedicurePage from "./views/PedicurePage";
 
 ReactDOM.render(
     <AuthProvider>
@@ -24,6 +26,8 @@ ReactDOM.render(
                 <Route path="/booking" element={<Booking />} />
                 <Route path="/auth" element={<AuthPage />} />
                 <Route path="/Products" element={<ProductPage />} />
+                <Route path="/Manicures" element={<ManicurePage />} />
+                <Route path="/Pedicures" element={<PedicurePage />} />
             </Routes>
             <Footer />
         </Router>

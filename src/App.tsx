@@ -1,3 +1,4 @@
+import FaqFrontPage from "./components/sections/FaqFrontPage";
 import Hero from "./components/sections/Hero";
 import Products from "./components/sections/Products";
 import Services from "./components/sections/Services";
@@ -11,6 +12,7 @@ function App() {
                 <Hero />
                 <Services />
                 <Products />
+                <FaqFrontPage />
             </main>
         </>
     );

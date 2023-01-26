@@ -17,7 +17,7 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
                 }`}
             >
                 <h2 className="mt-2 p-4 text-2xl font-bold text-white">
-                    Sidebar
+                    YNV Nails
                 </h2>
                 <ul className="w-full text-gray-400">
                     <li className="py-2">
