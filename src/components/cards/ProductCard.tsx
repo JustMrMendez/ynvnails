@@ -35,7 +35,7 @@ function ProductCard({
                 <div className="flex h-full flex-col justify-around gap-5 md:gap-0 md:px-4">
                     <h3 className="text-2xl font-semibold">{title}</h3>
                     <p className="m-1 text-gray-800">{description}</p>
-                    <p className="text-black-600 m-1 max-w-fit rounded-lg bg-pink-100">
+                    <p className="text-black-600 m-1 max-w-fit rounded-lg bg-pink-100 px-2">
                         ${price}
                     </p>
                     <Link to="/Products">
