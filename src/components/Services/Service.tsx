@@ -40,7 +40,7 @@ function Service({
                 </p>
                 <div className="mt-3">
                     <Link
-                        to="/"
+                        to="/Booking"
                         className="rounded bg-pink-500 px-2 py-1 text-lg text-pink-50  transition-all duration-300 hover:bg-pink-200 hover:text-pink-900"
                     >
                         Book Now!

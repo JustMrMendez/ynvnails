@@ -15,15 +15,17 @@ function Hero() {
                     Where quality and beauty come together, shop now or book
                     your appointment.
                 </p>
-                <div className="flex justify-center md:gap-10 md:px-10">
-                    <Button
-                        label="Book Appointment"
-                        color="pink-300 transition-all duration-300 hover:scale-110 hover:bg-pink-100 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-100 sm:w-[50%]"
-                        labelColor="white"
-                    />
-                </div>
+                <Link to="/Booking">
+                    <div className="flex justify-center md:gap-10 md:px-10">
+                        <Button
+                            label="Book Appointment"
+                            color="pink-300 transition-all duration-300 hover:scale-110 hover:bg-pink-100 hover:text-pink-600 hover:shadow-lg hover:shadow-pink-100"
+                            labelColor="white"
+                        />
+                    </div>
+                </Link>
             </div>
-            <p className="md:hidden text-white/10 text-4xl mt-6 -mb-14">OR</p>
+            <p className="mt-6 -mb-14 text-4xl text-white/10 md:hidden">OR</p>
             <div className="md:w-1/2 md:p-10 ">
                 <Link
                     to="/Products"
