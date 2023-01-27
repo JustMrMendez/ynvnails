@@ -22,7 +22,7 @@ function Service({
                 flip ? "md:flex-row-reverse" : "md:flex-row"
             }`}
         >
-            <div className="relative aspect-square md:max-h-[20rem]">
+            <div className="aspect-1 relative md:max-h-[20rem]">
                 <img
                     src={href}
                     alt=""

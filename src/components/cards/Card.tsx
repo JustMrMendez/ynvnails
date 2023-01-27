@@ -28,7 +28,7 @@ function Card({
                     src={href}
                     alt=""
                     className={`rounded-xl object-cover ${
-                        flip ? "md:aspect-square md:h-60" : ""
+                        flip ? "md:aspect-1 md:h-60" : ""
                     }`}
                 />
                 <div className="flex h-full flex-col justify-around gap-5 md:gap-0 md:px-4">
