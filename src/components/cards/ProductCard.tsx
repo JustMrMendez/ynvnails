@@ -38,7 +38,7 @@ function ProductCard({
                     <p className="text-black-600 m-1 max-w-fit rounded-lg bg-pink-100">
                         ${price}
                     </p>
-                    <Link to="/Products">
+                    <Link to={`/product/${productId}`}>
                         <Button
                             label="View Product"
                             labelColor="black"
