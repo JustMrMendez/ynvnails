@@ -1,6 +1,8 @@
 interface SidebarProps {
     isOpen: boolean;
 }
+import { Link } from "react-router-dom";
+import imageUrl from "/src/logo2.png";
 
 const Sidebar = ({ isOpen }: SidebarProps) => {
     return (
@@ -16,9 +18,13 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
                     isOpen ? "-translate-x-full" : ""
                 }`}
             >
-                <h2 className="mt-2 p-4 text-2xl font-bold text-white">
-                    YNV Nails
-                </h2>
+                <Link to="/" className="mt-2 py-4 text-2xl ">
+                    <img
+                        src={imageUrl}
+                        alt=""
+                        className="top-0 h-10 object-cover grayscale"
+                    />
+                </Link>
                 <ul className="w-full text-gray-400">
                     <li className="py-2">
                         <a

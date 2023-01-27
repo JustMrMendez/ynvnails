@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "./Sidebar";
+import imageUrl from "/src/logo2.png";
 function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -26,8 +27,15 @@ function Navbar() {
         <>
             <div className="fixed top-2 z-50 my-2 w-[95%] md:w-full">
                 <nav className=" flex w-full max-w-6xl items-center justify-between rounded-lg bg-gradient-to-tr from-purple-500/60 to-pink-600/60 py-2 px-6 shadow-sm shadow-purple-900/40 backdrop-blur-sm lg:mx-auto">
-                    <Link to="/" className="text-2xl font-bold text-white">
-                        Logo
+                    <Link
+                        to="/"
+                        className="h-10 text-2xl font-bold text-white "
+                    >
+                        <img
+                            src={imageUrl}
+                            alt=""
+                            className="top-0 h-10 object-cover grayscale"
+                        />
                     </Link>
                     <div className="ml-6 hidden  lg:flex">
                         {linksList.map(link => (
