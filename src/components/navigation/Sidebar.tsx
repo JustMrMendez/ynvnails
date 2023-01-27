@@ -1,8 +1,15 @@
+import { AuthContext } from "../../context/AuthProvider";
+import { useContext } from "react";
+import { signOut } from "firebase/auth";
+import { auth } from "../../db";
+
 interface SidebarProps {
     isOpen: boolean;
 }
 
 const Sidebar = ({ isOpen }: SidebarProps) => {
+    const { user } = useContext(AuthContext);
+
     return (
         <div className="z-auto">
             {/* if isOpen */}
@@ -45,9 +52,36 @@ const Sidebar = ({ isOpen }: SidebarProps) => {
                         </a>
                     </li>
                 </ul>
+                <div className="flex w-full justify-between">
+                    {user ? (
+                        <button
+                            className="block  px-4 py-2 text-left  text-gray-400 hover:bg-gray-800 hover:text-white"
+                            onClick={() => signOut(auth)}
+                        >
+                            Log Out
+                        </button>
+                    ) : (
+                        <a
+                            href="/auth"
+                            className="block px-4 py-2 text-gray-400 hover:bg-gray-800 hover:text-white"
+                        >
+                            Log In
+                        </a>
+                    )}
+                    {!user ? (
+                        <a
+                            href="/auth/"
+                            className=" block px-4 py-2 text-left text-gray-400 hover:bg-gray-800 hover:text-white"
+                        >
+                            Sign Up
+                        </a>
+                    ) : null}
+                </div>
             </div>
         </div>
     );
 };
 
 export default Sidebar;
+
+//  "Logout" : "Login"

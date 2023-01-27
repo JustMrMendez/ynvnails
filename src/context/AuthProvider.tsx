@@ -14,7 +14,10 @@ import {
     signInWithEmailAndPassword,
     sendPasswordResetEmail,
 } from "firebase/auth";
-
+function logout() {
+    auth.signOut();
+    setUser(null);
+}
 export interface AuthProviderProps {
     children?: ReactNode;
 }
@@ -80,3 +83,6 @@ export const AuthProvider = ({ children }: AuthProviderProps): JSX.Element => {
 export const useUserContext = (): UserContextState => {
     return useContext(UserStateContext);
 };
+function setUser(arg0: null) {
+    throw new Error("Function not implemented.");
+}
