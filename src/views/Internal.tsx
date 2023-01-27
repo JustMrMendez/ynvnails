@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../db";
+import ProductList from "./ProductList";
 
 const addProduct = async (product: any) => {
     const colRef = collection(db, "products");
@@ -77,6 +78,7 @@ function AddProductForm() {
                     </div>
                 </form>
             </div>
+            <ProductList />
         </main>
     );
 }
