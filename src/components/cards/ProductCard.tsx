@@ -29,7 +29,7 @@ function ProductCard({
                 <img
                     src={href}
                     alt=""
-                    className={`rounded-xl object-cover md:aspect-square md:h-60 
+                    className={`md:aspect-1 rounded-xl object-cover md:h-60 
                     `}
                 />
                 <div className="flex h-full flex-col justify-around gap-5 md:gap-0 md:px-4">

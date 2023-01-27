@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import { collection, DocumentData, getDocs } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthProvider";
+import { db } from "../db";
 
 function AuthPage() {
     const [email, setEmail] = useState("");
@@ -8,37 +10,76 @@ function AuthPage() {
     const [error, setError] = useState("");
     const { signIn, signUp } = useAuth();
     const Navigate = useNavigate();
+    const [created, setCreated] = useState(false);
 
     function handleLogin(event: { preventDefault: () => void }) {
         event.preventDefault();
         signIn(email, password)
             .catch((error: { message: React.SetStateAction<string> }) => {
                 setError(error.message);
+                if (error.message === "Email is Already in Use") {
+                    setError(error.message);
+                }
+                setTimeout(() => {
+                    setError("");
+                }, 2000);
             })
             .then(res => {
                 console.log(res);
-                Navigate("/");
+                Navigate("/Internal");
             });
     }
+
+    const [products, setProducts] = useState([] as DocumentData[]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const colRef = collection(db, "products");
+            const docSnap = await getDocs(colRef);
+            const data = docSnap.docs.map(doc => ({
+                id: doc.id,
+                ...doc.data(),
+            }));
+
+            setProducts(data);
+            console.log(products[2]);
+        };
+
+        fetchData();
+    }, []);
 
     function handleSignup(event: { preventDefault: () => void }) {
         event.preventDefault();
         signUp(email, password)
             .catch((error: { message: React.SetStateAction<string> }) => {
                 setError(error.message);
+                setTimeout(() => {
+                    setError("");
+                }, 2000);
+                setError(error.message);
             })
             .then(res => {
-                console.log(res);
+                if (res) {
+                    setCreated(true);
+                }
             });
     }
 
     return (
-        <main className="max-w-7xll relative z-30 flex h-full w-full flex-col items-center gap-10 rounded-b-2xl bg-pink-50 pb-24 shadow-lg md:rounded-none md:pt-24">
-            <div className="flex h-screen flex-col items-center justify-center bg-gray-200">
-                <form className="w-full max-w-lg rounded bg-white p-6 shadow">
+        <main className="relative z-40 flex h-full min-h-screen w-full flex-col items-center rounded-b-2xl bg-pink-50 pb-20 pt-20 shadow-lg md:rounded-none md:pt-24">
+            <div className="grid h-[50vh] w-11/12 place-items-center rounded-lg bg-gradient-to-br from-pink-500 to-purple-400 shadow-lg">
+                <h1 className="text-center text-5xl font-medium text-white ">
+                    Hello There
+                </h1>
+                <form className="mt-2 mb-4 flex-wrap gap-4">
                     {error && (
-                        <div className="mb-4 text-xs italic text-red-600">
-                            {error}
+                        <div className="mb-4 rounded bg-pink-200 px-2 text-center text-sm italic text-red-600 md:text-xl">
+                            Email Already Exist
+                        </div>
+                    )}
+                    {created && (
+                        <div className="mb-4 rounded bg-pink-200 px-2 text-center text-sm italic text-green-600 md:text-xl">
+                            Account Created, Welcome!
                         </div>
                     )}
                     <div className="mb-4">
@@ -49,7 +90,7 @@ function AuthPage() {
                             Email
                         </label>
                         <input
-                            className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
+                            className="focus:shadow-outline w-full appearance-none rounded border py-3 px-5 leading-tight text-gray-700 focus:outline-none"
                             type="email"
                             id="email"
                             value={email}
@@ -64,23 +105,23 @@ function AuthPage() {
                             Password
                         </label>
                         <input
-                            className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-gray-700 focus:outline-none"
+                            className="focus:shadow-outline w-full appearance-none rounded border py-3 px-3 leading-tight text-gray-700 focus:outline-none"
                             type="password"
                             id="password"
                             value={password}
                             onChange={event => setPassword(event.target.value)}
                         />
                     </div>
-                    <div className="flex justify-between">
+                    <div className="flex justify-between ">
                         <button
-                            className="focus:shadow-outline rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700 focus:outline-none"
+                            className="focus:shadow-outline rounded-b-3xl bg-pink-600 py-3 px-4 font-bold text-white hover:bg-pink-400 focus:outline-none"
                             type="button"
                             onClick={handleLogin}
                         >
                             Log In
                         </button>
                         <button
-                            className="focus:shadow-outline rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700 focus:outline-none"
+                            className="focus:shadow-outline rounded-b-3xl bg-pink-600 py-2 px-4 font-bold text-white hover:bg-pink-400 focus:outline-none"
                             type="button"
                             onClick={handleSignup}
                         >

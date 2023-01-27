@@ -37,7 +37,7 @@ function Hero() {
                     <img
                         src="https://source.unsplash.com/random/?nails"
                         alt="Nail Art"
-                        className="aspect-square object-cover mix-blend-screen transition-all duration-500 md:aspect-square"
+                        className="aspect-1 md:aspect-1 object-cover mix-blend-screen transition-all duration-500"
                     />
                 </Link>
             </div>
