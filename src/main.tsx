@@ -12,7 +12,6 @@ import AuthPage from "./views/auth";
 import ProductsPage from "./views/ProductsPage";
 import ManicurePage from "./views/ManicurePage";
 import PedicurePage from "./views/PedicurePage";
-import Internal from "./views/Internal";
 
 ReactDOM.render(
     <AuthProvider>
@@ -29,7 +28,6 @@ ReactDOM.render(
                 <Route path="/Products" element={<ProductsPage />} />
                 <Route path="/Manicures" element={<ManicurePage />} />
                 <Route path="/Pedicures" element={<PedicurePage />} />
-                <Route path="/Internal" element={<Internal />} />
             </Routes>
             <Footer />
         </Router>
